@@ -28,6 +28,10 @@ router.post("/client", async (req, res) => {
     }
 });
 
+router.get("/",(req,res) => {
+    res.send("hello world ")
+})
+
 router.get("/clients", async (req, res) => {
     try {
         const client = await clients.find();

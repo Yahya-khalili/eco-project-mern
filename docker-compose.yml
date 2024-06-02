@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      MONGO_URL: "mongodb+srv://root:root@eco-project.gu74etc.mongodb.net/db-store?retryWrites=true&w=majority&appName=eco-project"
