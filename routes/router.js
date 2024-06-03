@@ -220,9 +220,10 @@ router.post('/register', async (req, res) => {
 
         user = new User({ username, email, password });
         await user.save();
+        const jwtKey = require('crypto').randomBytes(32).toString('hex')
 
         const payload = { userId: user._id };
-        const token = jwt.sign(payload, 'privateKey', { expiresIn: '1h' });
+        const token = jwt.sign(payload, jwtKey, { expiresIn: '1h' });
 
         res.status(201).json({ token });
     } catch (error) {
