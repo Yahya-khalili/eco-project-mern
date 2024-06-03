@@ -1,7 +1,7 @@
-FROM node:14
+FROM node:16
 
 # Create app directory
-WORKDIR /eco-project-mern
+WORKDIR /eco-mern
 
 # Install app dependencies
 COPY package*.json ./
